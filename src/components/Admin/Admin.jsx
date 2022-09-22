@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import './Admin.css';
 
 function Admin (){
     useEffect(() => {
@@ -21,8 +22,8 @@ function Admin (){
     };
 
     return (
-        <table>
-            <thead>
+        <table className='admin_table'>
+            <thead className='admin_table_header'>
                 <tr>
                     <th>Name</th>
                     <th>Time Order Placed</th>
@@ -30,9 +31,9 @@ function Admin (){
                     <th>Cost</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody className='admin_table_body'>
                 {orders.map(order => 
-                    <tr>
+                    <tr key={order.id}>
                         <td>{order.customer_name}</td>
                         <td>{order.time}</td>
                         <td>{order.type}</td>
