@@ -1,0 +1,16 @@
+
+
+.checkout_table{
+    background-color: darkgrey;
+    border: 1px solid black;
+    width: 70%;
+    margin: 10%;
+}
+
+.checkout_table_header{
+    background-color: darkgrey;
+}
+
+.checkout_table_body{
+    background-color: lightgrey;
+}
