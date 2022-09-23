@@ -13,11 +13,12 @@ import logger from 'redux-logger';
 // Reducers:
 
 const cartReducer = (state=[], action)=>{
-    if (action.type === 'ADD_ITEM'){
-
-    }
-    else if (action.type === 'REMOVE_ITEM'){
-
+     if (action.type === 'ADD_ITEM'){
+        return [...state, action.payload]
+    }    
+    else if (action.type === 'REMOVE_ITEM') {
+        let newArray = state.filter(item => item.id !== action.payload.id)
+        return newArray;
     }
     else if (action.type === 'CLEAR_CART'){
         return [];
