@@ -36,7 +36,7 @@ function PizzaMenu () {
             {pizzas.map(pizza => <PizzaItem key={pizza.id} pizza={pizza}/>)}
           </tbody>
         </table>
-        <Link to='/checkout'><button>NEXT</button></Link>
+        <Link to='/customer'><button>NEXT</button></Link>
       </div>
     ) // end of return.
 

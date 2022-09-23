@@ -12,28 +12,15 @@ function CheckOut(){
     const cart = useSelector(store => store.cartReducer);
     const totalPrice = useSelector(store => store.totalPrice);
 
-    // let customer = {
-    //     customer_name: 'BeetleJuice',
-    //     street_address: '666 Devils Way',
-    //     city: 'St. Paul',
-    //     zip: 55311,
-    //     type: 'Pick-up',
-    //     pizzas: [{
-    //         id: 1,
-    //         quantity: 1
-    //       },{
-    //         id: 2,
-    //         quantity: 1
-    //       }]
-    // }
-
     //send total order to DB
     const addOrder = () => {
-        console.log(cart);
+        let pizzas = cart.map(pizza => ({...pizza, quantity: 1}));
+        console.log({...customer, total: totalPrice, pizzas: pizzas});
+
         axios({
          method: 'POST',
          url: '/api/order',
-         data: {...customer, total: totalPrice, pizzas: [{id: cart.id, quantity: }]}
+         data: {...customer, total: totalPrice, pizzas: pizzas}
         }).then((response) => {
             console.log(response)
             sendBackToMenu();
