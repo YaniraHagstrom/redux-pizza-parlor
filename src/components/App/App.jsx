@@ -10,7 +10,6 @@ import CustomerForm from '../CustomerForm/CustomerForm';
 import Checkout from '../Checkout/Checkout';
 import Admin from '../Admin/Admin';
 
-
 function App() {
 
   return (
@@ -19,7 +18,7 @@ function App() {
       <Router>
         <div>
           <Route path="/">
-            {/* <PizzaMenu /> */}
+             <PizzaMenu />
           </Route>
           <Route exact path="/customer">
             <CustomerForm />

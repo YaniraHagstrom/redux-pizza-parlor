@@ -4,7 +4,7 @@
 
 .App-header {
   background-color: #222;
-  height: 70px;
+  height: 100px;
   padding: 20px;
   color: white;
   margin-bottom: 20px;
@@ -13,3 +13,9 @@
 .App-title {
   font-size: 2em;
 }
+
+img {
+  height: 250px;
+  width: 250px;
+}
+
