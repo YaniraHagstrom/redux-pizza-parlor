@@ -43,7 +43,7 @@ export default function CustomerForm(){
 
     return (
         <>
-            <form onSubmit={handleSubmit} className="formContainer">
+            <div className="formContainer">
                 <div className='formInputSection'>
                     <input 
                         type="text"
@@ -94,13 +94,12 @@ export default function CustomerForm(){
                         <span className="checkmark"></span>
                     </label>
                 </div>
-                <div className='formTotal'>
-                    <button>Submit</button>
+                <div onClick={handleSubmit} className='formTotal'>
                     <Link to='/checkout'>
                         <button>Next</button>
                     </Link>
                 </div>
-            </form>
+            </div>
         </>
     )
 }

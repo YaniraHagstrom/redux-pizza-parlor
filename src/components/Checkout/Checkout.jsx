@@ -26,6 +26,7 @@ function CheckOut(){
             sendBackToMenu();
             clearCart();
             clearTotal();
+            clearCusty();
         }).catch((error) => {
             console.log('addOrder failed,', error);
         });
@@ -36,10 +37,13 @@ function CheckOut(){
         const action = {type: 'CLEAR_CART'};
         dispatch(action);
     }
-
     const clearTotal = () => {
         const action = {type: 'CLEAR_TOTAL'}
         dispatch(action);
+    }
+    const clearCusty = () => {
+       const action = {type: 'YEET_CUSTOMER'};
+       dispatch(action);
     }
 
     const history = useHistory();

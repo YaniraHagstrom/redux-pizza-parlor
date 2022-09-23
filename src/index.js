@@ -32,7 +32,7 @@ const customer = (state = [], action) => {
         return action.payload;
     }
     else if (action.type === 'YEET_CUSTOMER'){
-
+        return [];
     }
     return state;
 }
