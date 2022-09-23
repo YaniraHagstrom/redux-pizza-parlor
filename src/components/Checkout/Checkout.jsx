@@ -9,8 +9,8 @@ import CheckoutTable from "./CheckoutTable";
 
 function CheckOut(){
     const customer = useSelector(store => store.customer);
-    const totalPrice = useSelector(store => store.totalPrice);
     const cart = useSelector(store => store.cartReducer);
+    const totalPrice = useSelector(store => store.totalPrice);
 
     // let customer = {
     //     customer_name: 'BeetleJuice',
@@ -26,15 +26,14 @@ function CheckOut(){
     //         quantity: 1
     //       }]
     // }
-    
-    let totalPrice = 34.59;
 
     //send total order to DB
     const addOrder = () => {
+        console.log(cart);
         axios({
          method: 'POST',
          url: '/api/order',
-         data: {...customer, total: totalPrice, pizzas: cart.pizzas}
+         data: {...customer, total: totalPrice, pizzas: [{id: cart.id, quantity: }]}
         }).then((response) => {
             console.log(response)
             sendBackToMenu();

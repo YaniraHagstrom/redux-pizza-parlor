@@ -1,11 +1,11 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import {useState} from 'react';
-
+import { useSelector } from 'react-redux';
 function PizzaItem ({pizza}) {
-
+  
+    const totalPrice = useSelector(store=> store.totalPrice)
     const dispatch = useDispatch();
-    
     const addToCart = () => {
         setIsClicked(!isClicked)
         const action ={
@@ -14,7 +14,6 @@ function PizzaItem ({pizza}) {
           }
           dispatch(action)
     }
-
     const removeFromCart = () => {
         const action ={
             type: 'REMOVE_ITEM',
@@ -22,13 +21,17 @@ function PizzaItem ({pizza}) {
           }
           dispatch(action)
     }
-
+    const addPrice = () => {
+      const action ={
+        type: 'ADD_PRICE',
+        payload:pizza.price
+      }
+      dispatch(action)
+    }
     const [isClicked, setIsClicked] = useState(true);
-
     const switchDisplayButton = () => {
         setIsClicked(!isClicked)
     }
-    
     return (
         <>
         <tr>
@@ -37,13 +40,11 @@ function PizzaItem ({pizza}) {
           <td>{pizza.description}</td>
           <td>{pizza.price}</td>
           <td>
-            <button onClick={addToCart} hidden={!isClicked}>Add</button>
+            <div onClick={addPrice}><button onClick={addToCart} hidden={!isClicked}>Add</button></div>
             <div onClick={switchDisplayButton}> {!isClicked ? <button onClick={removeFromCart}>Remove</button> : null} </div>
           </td>
         </tr>
         </>
-      ); // end of return. 
-
+      ); // end of return.
 } // end of PizzaItem
-
 export default PizzaItem;
