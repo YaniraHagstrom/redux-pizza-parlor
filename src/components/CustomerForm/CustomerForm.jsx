@@ -95,8 +95,9 @@ export default function CustomerForm(){
                     </label>
                 </div>
                 <div className='formTotal'>
+                    <button>Submit</button>
                     <Link to='/checkout'>
-                        <button>Submit</button>
+                        <button>Next</button>
                     </Link>
                 </div>
             </form>
