@@ -1,7 +1,9 @@
 import { useSelector } from "react-redux";
 
 export default function Header(){
+
     const totalPrice = useSelector(store=> store.totalPrice)
+    
 
     return (
         <header className='App-header'>
@@ -10,3 +12,4 @@ export default function Header(){
         </header>
     )
 }
+
