@@ -39,11 +39,11 @@ const customer = (state = [], action) => {
 
 const totalPrice = (state=0, action)=> {
     if (action.type === 'ADD_PRICE'){
-        return state + action.payload;
+        return state + Number(action.payload);
     }
 
     else if (action.type === 'SUBTRACT_PRICE'){
-        return state - action.payload;
+        return state - Number(action.payload);
     }
     return state;
 }
