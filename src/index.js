@@ -28,7 +28,7 @@ const cartReducer = (state=[], action)=>{
 
 const customer = (state = [], action) => {
     if (action.type === 'ADD_CUSTOMER'){
-
+        return action.payload;
     }
     else if (action.type === 'YEET_CUSTOMER'){
 
