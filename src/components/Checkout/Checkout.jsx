@@ -25,6 +25,7 @@ function CheckOut(){
             console.log(response)
             sendBackToMenu();
             clearCart();
+            clearTotal();
         }).catch((error) => {
             console.log('addOrder failed,', error);
         });
@@ -33,6 +34,11 @@ function CheckOut(){
     const dispatch = useDispatch();
     const clearCart = () => {
         const action = {type: 'CLEAR_CART'};
+        dispatch(action);
+    }
+
+    const clearTotal = () => {
+        const action = {type: 'CLEAR_TOTAL'}
         dispatch(action);
     }
 

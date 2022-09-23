@@ -45,6 +45,9 @@ const totalPrice = (state=0, action)=> {
     else if (action.type === 'SUBTRACT_PRICE'){
         return state - Number(action.payload);
     }
+    else if (action.type === 'CLEAR_TOTAL'){
+        return 0;
+    }
     return state;
 }
 
