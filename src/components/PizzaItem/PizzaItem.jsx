@@ -45,7 +45,7 @@ function PizzaItem ({pizza}) {
     }
     return (
         <>
-        <tr>
+        <tr className='pizzaItem'>
           <td><img src={pizza.image_path}/></td>
           <td>{pizza.name}</td>
           <td>{pizza.description}</td>

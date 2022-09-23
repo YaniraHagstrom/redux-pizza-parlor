@@ -3,6 +3,7 @@ import axios from 'axios';
 import PizzaItem from '../PizzaItem/PizzaItem';
 import { useState } from 'react';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import './PizzaMenu.css'
 
 function PizzaMenu () {
 
@@ -29,14 +30,14 @@ function PizzaMenu () {
     } // End of renderPizza.
 
     return (
-        <div>
-        <p>Step 1: Select Your Pizza</p>
-        <table>
-          <tbody>
-            {pizzas.map(pizza => <PizzaItem key={pizza.id} pizza={pizza}/>)}
-          </tbody>
-        </table>
-        <Link to='/customer'><button>NEXT</button></Link>
+        <div className='pizzaMenu'>
+          <h2 className='header'>Step 1: Select Your Pizza</h2>
+          <table className='pizzaTable'>
+            <tbody>
+              {pizzas.map(pizza => <PizzaItem key={pizza.id} pizza={pizza}/>)}
+            </tbody>
+          </table>
+          <Link to='/customer' className='submitCart'><button>NEXT</button></Link>
       </div>
     ) // end of return.
 

@@ -1,4 +1,41 @@
 /* The container */
+.formContainer {
+    grid-area: body;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 1fr 0.2fr;
+    grid-template-areas: 
+        "inputs type"
+        "inputs total";
+}
+
+.formInputSection{
+    grid-area: inputs;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: flex-end;
+    width: 80%;
+    gap: 1em;
+}
+
+.formInputs{
+    width: 200px;
+}
+
+.pickupType{
+    grid-area: type;
+    justify-content: center;
+    align-items: flex-start;
+    width: 10%;
+}
+
+.formTotal{
+    grid-area: total;
+    display: flex;
+
+}
+
 .container {
     display: block;
     position: relative;

@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import './Header.css';
 
 export default function Header(){
     const totalPrice = useSelector(store=> store.totalPrice)

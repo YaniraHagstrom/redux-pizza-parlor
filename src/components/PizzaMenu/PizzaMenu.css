@@ -1,0 +1,18 @@
+.pizzaMenu{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+    grid-template-areas: 
+        "header"
+        "pizzaTable"
+        "submit";
+    height: 50vh;
+}
+
+.pizzaTable {
+    grid-area: pizzaTable;
+}
+
+.submitCart {
+    grid-area: submit;
+}
