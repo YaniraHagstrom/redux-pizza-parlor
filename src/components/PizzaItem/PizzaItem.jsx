@@ -2,9 +2,11 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import {useState} from 'react';
 import { useSelector } from 'react-redux';
+
 function PizzaItem ({pizza}) {
-  
+
     const totalPrice = useSelector(store=> store.totalPrice)
+
     const dispatch = useDispatch();
     const addToCart = () => {
         setIsClicked(!isClicked)
@@ -28,6 +30,15 @@ function PizzaItem ({pizza}) {
       }
       dispatch(action)
     }
+
+    const subtractPrice = () => {
+      const action ={
+        type: 'SUBTRACT_PRICE',
+        payload:pizza.price
+      }
+      dispatch(action)
+    }
+
     const [isClicked, setIsClicked] = useState(true);
     const switchDisplayButton = () => {
         setIsClicked(!isClicked)
@@ -41,7 +52,9 @@ function PizzaItem ({pizza}) {
           <td>{pizza.price}</td>
           <td>
             <div onClick={addPrice}><button onClick={addToCart} hidden={!isClicked}>Add</button></div>
-            <div onClick={switchDisplayButton}> {!isClicked ? <button onClick={removeFromCart}>Remove</button> : null} </div>
+            <div onClick={subtractPrice}>
+              <div onClick={switchDisplayButton}> {!isClicked ? <button onClick={removeFromCart}>Remove</button> : null} </div>
+            </div>
           </td>
         </tr>
         </>

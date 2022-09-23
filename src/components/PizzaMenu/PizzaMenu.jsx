@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import axios from 'axios';
 import PizzaItem from '../PizzaItem/PizzaItem';
 import { useState } from 'react';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 function PizzaMenu () {
 
@@ -35,7 +36,7 @@ function PizzaMenu () {
             {pizzas.map(pizza => <PizzaItem key={pizza.id} pizza={pizza}/>)}
           </tbody>
         </table>
-        <button>NEXT</button>
+        <Link to='/checkout'><button>NEXT</button></Link>
       </div>
     ) // end of return.
 

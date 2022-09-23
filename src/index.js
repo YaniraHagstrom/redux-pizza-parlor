@@ -16,14 +16,11 @@ const cartReducer = (state=[], action) => {
     switch(action.type){
         case('ADD_ITEM'):
             return [...state, action.payload];
-                 break;
         case('REMOVE_ITEM'):
             let newArray = state.filter(item => item.id !== action.payload.id);
             return newArray;
-                 break;
         case('CLEAR_CART'):
             return [];
-                 break;
         default:
             return state;
     }
@@ -46,7 +43,7 @@ const totalPrice = (state=0, action)=> {
     }
 
     else if (action.type === 'SUBTRACT_PRICE'){
-        return state -  Number(action.payload);
+        return state - Number(action.payload);
     }
     return state;
 }
