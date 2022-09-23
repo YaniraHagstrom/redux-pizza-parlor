@@ -15,7 +15,7 @@ export default function CustomerForm(){
         customer_name: customerName, 
         street_address: customerAddress,
         city: customerCity,
-        zip: customerZip,
+        zip: Number(customerZip),
         type: type
     }
 

@@ -12,19 +12,20 @@ import logger from 'redux-logger';
 
 // Reducers:
 
-const cartReducer = (state=[], action)=>{
-    if (action.type === 'ADD_ITEM'){
-
+const cartReducer = (state=[], action) => {
+    switch(action.type){
+        case('ADD_ITEM'):
+            return [...state, action.payload];
+        case('REMOVE_ITEM'):
+            let newArray = state.filter(item => item.id !== action.payload.id);
+            return newArray;
+        case('CLEAR_CART'):
+            return [];
+        default:
+            return state;
     }
-    else if (action.type === 'REMOVE_ITEM'){
-
-    }
-    else if (action.type === 'CLEAR_CART'){
-        return [];
-    }
-
-    return state;
 }
+
 
 const customer = (state = [], action) => {
     if (action.type === 'ADD_CUSTOMER'){
@@ -38,11 +39,11 @@ const customer = (state = [], action) => {
 
 const totalPrice = (state=0, action)=> {
     if (action.type === 'ADD_PRICE'){
-        return state + action.payload;
+        return state + Number(action.payload);
     }
 
     else if (action.type === 'SUBTRACT_PRICE'){
-        return state - action.payload;
+        return state - Number(action.payload);
     }
     return state;
 }

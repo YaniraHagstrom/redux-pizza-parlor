@@ -1,7 +1,7 @@
-import axios from 'axios';
+
+import React from 'react';
 import './App.css';
 import { HashRouter as Router, Route } from 'react-router-dom';
-import { useState } from 'react';
 
 // Import Components
 import Header from '../Header/Header';
@@ -9,7 +9,6 @@ import PizzaMenu from '../PizzaMenu/PizzaMenu';
 import CustomerForm from '../CustomerForm/CustomerForm';
 import Checkout from '../Checkout/Checkout';
 import Admin from '../Admin/Admin';
-
 
 function App() {
 
@@ -19,21 +18,19 @@ function App() {
       <Router>
         <div>
           <Route exact path="/">
-            {/* <PizzaMenu  /> */}
+             <PizzaMenu />
           </Route>
           <Route exact path="/customer">
             <CustomerForm />
           </Route>
           <Route exact path="/checkout">
-            {/* <Checkout /> */}
+            <Checkout />
           </Route>
           <Route exact path="/admin">
-            {/* <Admin /> */}
+            <Admin />
           </Route>
         </div>
       </Router>
-      {/* <img src='images/pizza_photo.png' /> */}
-      {/* <p>Pizza is great.</p> */}
     </div>
   );
 }
